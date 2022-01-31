@@ -3,12 +3,12 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import counterReducer from './counter/counter';
+import allCountriesReducer from './allCountries/allCountries';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const reducers = combineReducers({
-  counter: counterReducer,
+  allCountries: allCountriesReducer,
 });
 
 const store = createStore(
