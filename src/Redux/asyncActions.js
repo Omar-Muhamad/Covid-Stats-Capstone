@@ -5,7 +5,7 @@ import {
   getCountriesFailure,
 } from './allCountries/allCountries';
 
-export const date = DateTime.local().toFormat('yyyy-LL-dd');
+export const date = DateTime.local().minus({ hours: 3 }).toFormat('yyyy-LL-dd');
 const url = `https://api.covid19tracking.narrativa.com/api/${date}`;
 
 const getCountries = () => async (dispatch) => {

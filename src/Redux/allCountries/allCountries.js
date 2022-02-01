@@ -16,10 +16,7 @@ export const getCountriesFailure = (error) => ({
   error,
 });
 
-const initialState = {
-  loading: 'null',
-  data: {},
-};
+const initialState = {};
 
 const allCountriesReducer = (state = initialState, action) => {
   switch (action.type) {

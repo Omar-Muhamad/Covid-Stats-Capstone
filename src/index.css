@@ -11,3 +11,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.country {
+  background-color: #446AB3;
+}
+
+.country:nth-child(even) {
+  background-color: #3E61A6;
+}
