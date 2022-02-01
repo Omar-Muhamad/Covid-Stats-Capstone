@@ -1,3 +1,4 @@
+/* stylelint-disable scss/at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,9 +14,9 @@ body {
 }
 
 .country {
-  background-color: #446AB3;
+  background-color: #446ab3;
 }
 
 .country:nth-child(even) {
-  background-color: #3E61A6;
+  background-color: #3e61a6;
 }
