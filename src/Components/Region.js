@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { getRegion } from '../Redux/asyncActions';
@@ -8,7 +8,6 @@ import Header from './Header';
 const Region = () => {
   const region = useSelector((state) => state.region.data);
   const loading = useSelector((state) => state.region.loading);
-  const [countryData, setCountryData] = useState({});
   const { country } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -16,22 +15,16 @@ const Region = () => {
     dispatch(getRegion(country, abort));
     return () => abort.abort();
   }, []);
-  useEffect(() => {
-    if (loading === 'success') {
-      const data = Object.values(region.dates)[0].countries;
-      setCountryData((data)[Object.keys((data))[0]]);
-    }
-  }, [region]);
+  if (!loading || loading === 'loading') return <Loading />;
   return (
     <>
-      {loading === 'loading' && <Loading />}
       <Header page="region" country={country} />
       <section className="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-8">
         <i className="fas fa-map-marked-alt fa-6x text-[#2D4573]" />
         <div className="CountryStats">
-          <h2 className="text-4xl font-bold text-center">{countryData.name}</h2>
+          <h2 className="text-4xl font-bold text-center">{region.name}</h2>
           <p className="text-lg text-center">
-            {loading === 'success' && `${countryData.today_confirmed} Cases`}
+            {loading === 'success' && `${region.today_confirmed} Cases`}
           </p>
         </div>
       </section>
@@ -40,7 +33,7 @@ const Region = () => {
           Stats by region
         </h2>
         <ul className="grid grid-cols-2 justify-items-end text-right bg-[#4972be]">
-          {countryData.regions !== undefined && countryData.regions.map((region) => (
+          {region.regions !== undefined && region.regions.map((region) => (
             <li
               key={region.id}
               className="country w-full grid p-4 text-white"
@@ -52,7 +45,7 @@ const Region = () => {
             </li>
           ))}
         </ul>
-        {countryData.regions !== undefined && countryData.regions.length === 0 && (
+        {region.regions !== undefined && region.regions.length === 0 && (
           <div className="h-[calc(100vh-20rem)] bg-[#5787E5] text-white text-center pt-20 text-2xl font-bold">
             No Regional Data
           </div>

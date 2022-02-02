@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
@@ -6,9 +6,10 @@ import Header from './Header';
 import { getCountries } from '../Redux/asyncActions';
 
 const Home = () => {
-  const allCountries = useSelector((state) => state.allCountries.data);
+  const countries = useSelector((state) => state.allCountries.data);
   const loading = useSelector((state) => state.allCountries.loading);
-  const [countries, setContries] = useState({});
+  console.log(countries);
+  // const [countries, setContries] = useState({});
   const dispatch = useDispatch();
   useEffect(() => {
     const abort = new AbortController();
@@ -16,20 +17,20 @@ const Home = () => {
     return () => abort.abort();
   }, []);
 
-  useEffect(() => {
-    if (loading === 'success') {
-      setContries(Object.values(allCountries.dates)[0].countries);
-    }
-  }, [allCountries]);
+  // useEffect(() => {
+  //   if (loading === 'success') {
+  //     setContries(Object.values(allCountries.dates)[0].countries);
+  //   }
+  // }, [allCountries]);
 
   const changeHandler = (e) => {
     const value = e.target.value; // eslint-disable-line
     console.log(value);
   };
 
+  if (!loading || loading === 'loading') return <Loading />;
   return (
     <>
-      {loading === 'loading' && <Loading />}
       <Header page="allCountries" />
       <section className="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-8">
         <i className="fas fa-globe-americas fa-6x text-[#2D4573]" />
@@ -37,7 +38,7 @@ const Home = () => {
           <h2 className="text-4xl font-bold text-center">Global Cases</h2>
           <p className="text-lg text-center">
             {loading === 'success' && (
-              `${allCountries.total.today_confirmed} Cases`
+              `${countries.totalConfirmed} Cases`
             )}
           </p>
         </div>
@@ -59,13 +60,13 @@ const Home = () => {
         </div>
         <ul className="grid grid-cols-2 justify-items-end text-right bg-[#5787E5]">
           {loading === 'success' && (
-            Object.entries(countries).map(([key, value]) => (
-              <li key={key} className="country w-full p-4 text-white">
-                <Link to={value.name} className="w-full grid">
+            countries.countriesArr.map((country) => (
+              <li key={country.id} className="country w-full p-4 text-white">
+                <Link to={country.name} className="w-full grid">
                   <i className="far fa-arrow-alt-circle-right fa-lg" />
                   <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />
-                  <h2 className=" text-xl font-bold">{value.name}</h2>
-                  <p>{`${value.today_confirmed} Cases`}</p>
+                  <h2 className=" text-xl font-bold">{country.name}</h2>
+                  <p>{`${country.today_confirmed} Cases`}</p>
                 </Link>
               </li>
             )))}
