@@ -7,10 +7,15 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #5787E5;
   scroll-behavior: smooth;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.country{
+  background-color: #4b77cf;
 }
 
 .country:nth-child(4n+2),

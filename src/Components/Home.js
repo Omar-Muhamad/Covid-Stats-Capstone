@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
@@ -8,38 +8,36 @@ import { getCountries } from '../Redux/asyncActions';
 const Home = () => {
   const countries = useSelector((state) => state.allCountries.data);
   const loading = useSelector((state) => state.allCountries.loading);
-  console.log(countries);
-  // const [countries, setContries] = useState({});
   const dispatch = useDispatch();
+
+  const [searchedCountries, setSearchedCountries] = useState([]);
+
   useEffect(() => {
     const abort = new AbortController();
     dispatch(getCountries(abort));
     return () => abort.abort();
   }, []);
 
-  // useEffect(() => {
-  //   if (loading === 'success') {
-  //     setContries(Object.values(allCountries.dates)[0].countries);
-  //   }
-  // }, [allCountries]);
+  useEffect(() => {
+    if (loading === 'success') setSearchedCountries(countries.countriesArr);
+  }, [countries]);
 
-  const changeHandler = (e) => {
-    const value = e.target.value; // eslint-disable-line
-    console.log(value);
+  const searchHandler = (e) => {
+    const value = e.target.value.toLowerCase();
+    const list = countries.countriesArr.filter((country) => country.id.includes(value));
+    setSearchedCountries(list);
   };
 
   if (!loading || loading === 'loading') return <Loading />;
   return (
-    <>
+    <div className="bg-[#5787E5]">
       <Header page="allCountries" />
       <section className="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-8">
         <i className="fas fa-globe-americas fa-6x text-[#2D4573]" />
         <div className="globalStats">
           <h2 className="text-4xl font-bold text-center">Global Cases</h2>
           <p className="text-lg text-center">
-            {loading === 'success' && (
-              `${countries.totalConfirmed} Cases`
-            )}
+            {loading === 'success' && `${countries.totalConfirmed} Cases`}
           </p>
         </div>
       </section>
@@ -49,30 +47,34 @@ const Home = () => {
           <div className="relative">
             <input
               type="text"
-              onChange={changeHandler}
+              onChange={searchHandler}
               name="searchBar"
               id="searchBar"
               placeholder="Search"
-              className="rounded-2xl px-4 py-1 bg-[#5787E5] focus:outline-none placeholder:text-white text-lg"
+              className="rounded-2xl px-4 py-1 bg-[#5787E5] focus:outline-none placeholder:text-white text-lg w-[200px]"
             />
-            <i className="fas fa-search absolute right-[10px] top-2" />
+            <i className="fas fa-search absolute right-[10px] top-[10px]" />
           </div>
         </div>
-        <ul className="grid grid-cols-2 justify-items-end text-right bg-[#5787E5]">
-          {loading === 'success' && (
-            countries.countriesArr.map((country) => (
-              <li key={country.id} className="country w-full p-4 text-white">
-                <Link to={country.name} className="w-full grid">
-                  <i className="far fa-arrow-alt-circle-right fa-lg" />
-                  <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />
-                  <h2 className=" text-xl font-bold">{country.name}</h2>
-                  <p>{`${country.today_confirmed} Cases`}</p>
-                </Link>
-              </li>
-            )))}
+        {searchedCountries.length === 0 && (
+          <div className="text-white text-center pt-20 text-2xl font-bold">
+            No Matched Countries
+          </div>
+        )}
+        <ul className="grid grid-cols-2 justify-items-end text-right min-h-[500px]">
+          {searchedCountries.map((country) => (
+            <li key={country.id} className="country w-full">
+              <Link to={country.name} className="w-full p-4 text-white grid">
+                <i className="far fa-arrow-alt-circle-right fa-lg" />
+                <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />
+                <h2 className=" text-xl font-bold">{country.name}</h2>
+                <p>{`${country.today_confirmed} Cases`}</p>
+              </Link>
+            </li>
+          ))}
         </ul>
       </section>
-    </>
+    </div>
   );
 };
 
