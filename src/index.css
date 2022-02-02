@@ -7,14 +7,13 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #5787E5;
+  background-color: #5787e5;
   scroll-behavior: smooth;
-  background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.country{
+.country {
   background-color: #4b77cf;
 }
 
