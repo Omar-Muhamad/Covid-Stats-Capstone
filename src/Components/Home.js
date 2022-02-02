@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import Header from './Header';
-import getCountries from '../Redux/asyncActions';
+import { getCountries } from '../Redux/asyncActions';
 
 const Home = () => {
   const allCountries = useSelector((state) => state.allCountries.data);
@@ -10,7 +11,9 @@ const Home = () => {
   const [countries, setContries] = useState({});
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getCountries());
+    const abort = new AbortController();
+    dispatch(getCountries(abort));
+    return () => abort.abort();
   }, []);
 
   useEffect(() => {
@@ -32,19 +35,20 @@ const Home = () => {
         </div>
       </section>
       <section className="countriesStats">
-        <h2 className="bg-[#35548B] py-[4px] px-8 text-white font-medium">
+        <h2 className="bg-[#35548B] py-[4px] px-4 text-white font-medium">
           Stats by country
         </h2>
-        <ul className="grid grid-cols-2 justify-items-end text-right">
-          {loading === 'success' && (Object.entries(countries).map(([key, value]) => (
-            <li key={key} className="country grid w-full p-4 text-white">
-              <i className="far fa-arrow-alt-circle-right fa-lg" />
-              <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />
-              <h2 className=" text-xl font-bold">{value.name}</h2>
-              <h2>{`${value.today_confirmed} Cases`}</h2>
+        <ul className="grid grid-cols-2 justify-items-end text-right bg-[#4972be]">
+          {loading === 'success' && Object.entries(countries).map(([key, value]) => (
+            <li key={key} className="country w-full p-4 text-white">
+              <Link to={value.name} className="w-full grid">
+                <i className="far fa-arrow-alt-circle-right fa-lg" />
+                <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />
+                <h2 className=" text-xl font-bold">{value.name}</h2>
+                <p>{`${value.today_confirmed} Cases`}</p>
+              </Link>
             </li>
-          ))
-          )}
+          ))}
         </ul>
       </section>
     </>

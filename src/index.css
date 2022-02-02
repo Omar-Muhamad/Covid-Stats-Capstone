@@ -13,10 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.country {
-  background-color: #446ab3;
-}
-
-.country:nth-child(even) {
+.country:nth-child(4n+2),
+.country:nth-child(4n+3) {
   background-color: #3e61a6;
 }
