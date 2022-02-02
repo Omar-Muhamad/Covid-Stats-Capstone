@@ -25,7 +25,7 @@ const Home = () => {
     <>
       {loading === 'loading' && <Loading />}
       <Header page="allCountries" />
-      <section className="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-16">
+      <section className="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-8">
         <i className="fas fa-globe-americas fa-6x text-[#2D4573]" />
         <div className="globalStats">
           <h2 className="text-4xl font-bold text-center">Global Cases</h2>

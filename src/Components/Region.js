@@ -26,14 +26,37 @@ const Region = () => {
     <>
       {loading === 'loading' && <Loading />}
       <Header page="region" country={country} />
-      <section className="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-16">
-        <i className="fas fa-globe-americas fa-6x text-[#2D4573]" />
+      <section className="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-8">
+        <i className="fas fa-map-marked-alt fa-6x text-[#2D4573]" />
         <div className="CountryStats">
-          <h2 className="text-4xl font-bold text-center">Global Cases</h2>
+          <h2 className="text-4xl font-bold text-center">{countryData.name}</h2>
           <p className="text-lg text-center">
             {loading === 'success' && `${countryData.today_confirmed} Cases`}
           </p>
         </div>
+      </section>
+      <section className="countriesStats">
+        <h2 className="bg-[#35548B] py-[4px] px-4 text-white font-medium">
+          Stats by region
+        </h2>
+        <ul className="grid grid-cols-2 justify-items-end text-right bg-[#4972be]">
+          {countryData.regions !== undefined && countryData.regions.map((region) => (
+            <li
+              key={region.id}
+              className="country w-full grid p-4 text-white"
+            >
+              <i className="far fa-arrow-alt-circle-right fa-lg" />
+              <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />
+              <h2 className=" text-xl font-bold">{region.name}</h2>
+              <p>{`${region.today_confirmed} Cases`}</p>
+            </li>
+          ))}
+        </ul>
+        {countryData.regions !== undefined && countryData.regions.length === 0 && (
+          <div className="h-[calc(100vh-20rem)] bg-[#5787E5] text-white text-center pt-20 text-2xl font-bold">
+            No Regional Data
+          </div>
+        )}
       </section>
     </>
   );
