@@ -56,23 +56,25 @@ const Home = () => {
             <i className="fas fa-search absolute right-[10px] top-[10px]" />
           </div>
         </div>
-        {searchedCountries.length === 0 && (
-          <div className="text-white text-center pt-20 text-2xl font-bold">
-            No Matched Countries
-          </div>
-        )}
-        <ul className="grid grid-cols-2 justify-items-end text-right min-h-[500px]">
-          {searchedCountries.map((country) => (
-            <li key={country.id} className="country w-full">
-              <Link to={country.name} className="w-full p-4 text-white grid">
-                <i className="far fa-arrow-alt-circle-right fa-lg" />
-                <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />
-                <h2 className=" text-xl font-bold">{country.name}</h2>
-                <p>{`${country.today_confirmed} Cases`}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="countriesContainer min-h-[500px]">
+          {searchedCountries.length === 0 && (
+            <div className="text-white text-center pt-20 text-2xl font-bold">
+              No Matched Countries
+            </div>
+          )}
+          <ul className="grid grid-cols-2 justify-items-end text-right">
+            {searchedCountries.map((country) => (
+              <li key={country.id} className="country w-full">
+                <Link to={country.name} className="w-full p-4 text-white grid">
+                  <i className="far fa-arrow-alt-circle-right fa-lg" />
+                  <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />
+                  <h2 className=" text-xl font-bold">{country.name}</h2>
+                  <p>{`${country.today_confirmed} Cases`}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
     </div>
   );
