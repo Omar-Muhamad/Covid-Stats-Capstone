@@ -37,6 +37,7 @@ const Region = () => {
             <li
               key={region.id}
               className="country w-full grid p-4 text-white"
+              data-testid="regionListItem"
             >
               <i className="far fa-arrow-alt-circle-right fa-lg" />
               <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />

@@ -1,37 +1,560 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Region render Test Region Render 1`] = `
+exports[`Test Region component Test render Region component and mocking the store to test Regions rendering 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="absolute z-10 w-screen h-screen bg-[#5787E5] flex flex-col gap-4 justify-center items-center"
+      <header
+        class="header px-4 bg-[#4369B2]"
       >
-        <div
-          class="w-[110px] h-[110px] border-[16px] border-t-[#5787E5] rounded-full border-white animate-spin"
+        <nav
+          class="nav h-[50px] text-white flex justify-between items-center font-medium "
+        >
+          <a
+            class="flex gap-2 items-center"
+            href="/"
+          >
+            <i
+              class="fas fa-chevron-left"
+            />
+            <h2>
+              Global
+            </h2>
+          </a>
+          <h2>
+             Stats
+          </h2>
+          <div
+            class="flex gap-4"
+          >
+            <i
+              class="fas fa-microphone"
+            />
+            <i
+              class="fas fa-cog"
+            />
+          </div>
+        </nav>
+      </header>
+      <section
+        class="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-8"
+      >
+        <i
+          class="fas fa-map-marked-alt fa-6x text-[#2D4573]"
         />
         <div
-          class="text-white text-2xl font-bold"
+          class="CountryStats"
         >
-          Loading...
+          <h2
+            class="text-4xl font-bold text-center"
+          />
+          <p
+            class="text-lg text-center"
+          >
+            2645825 Cases
+          </p>
         </div>
-      </div>
+      </section>
+      <section
+        class="countriesStats"
+      >
+        <h2
+          class="bg-[#35548B] py-[4px] px-4 text-white font-medium"
+        >
+          Stats by region
+        </h2>
+        <ul
+          class="grid grid-cols-2 justify-items-end text-right bg-[#4972be]"
+        >
+          <li
+            class="country w-full grid p-4 text-white"
+            data-testid="regionListItem"
+          >
+            <i
+              class="far fa-arrow-alt-circle-right fa-lg"
+            />
+            <i
+              class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+            />
+            <h2
+              class=" text-xl font-bold"
+            >
+              Tasmania
+            </h2>
+            <p>
+              31967 Cases
+            </p>
+          </li>
+          <li
+            class="country w-full grid p-4 text-white"
+            data-testid="regionListItem"
+          >
+            <i
+              class="far fa-arrow-alt-circle-right fa-lg"
+            />
+            <i
+              class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+            />
+            <h2
+              class=" text-xl font-bold"
+            >
+              Victoria
+            </h2>
+            <p>
+              889710 Cases
+            </p>
+          </li>
+          <li
+            class="country w-full grid p-4 text-white"
+            data-testid="regionListItem"
+          >
+            <i
+              class="far fa-arrow-alt-circle-right fa-lg"
+            />
+            <i
+              class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+            />
+            <h2
+              class=" text-xl font-bold"
+            >
+              Queensland
+            </h2>
+            <p>
+              896530 Cases
+            </p>
+          </li>
+        </ul>
+      </section>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="absolute z-10 w-screen h-screen bg-[#5787E5] flex flex-col gap-4 justify-center items-center"
+    <header
+      class="header px-4 bg-[#4369B2]"
     >
-      <div
-        class="w-[110px] h-[110px] border-[16px] border-t-[#5787E5] rounded-full border-white animate-spin"
+      <nav
+        class="nav h-[50px] text-white flex justify-between items-center font-medium "
+      >
+        <a
+          class="flex gap-2 items-center"
+          href="/"
+        >
+          <i
+            class="fas fa-chevron-left"
+          />
+          <h2>
+            Global
+          </h2>
+        </a>
+        <h2>
+           Stats
+        </h2>
+        <div
+          class="flex gap-4"
+        >
+          <i
+            class="fas fa-microphone"
+          />
+          <i
+            class="fas fa-cog"
+          />
+        </div>
+      </nav>
+    </header>
+    <section
+      class="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-8"
+    >
+      <i
+        class="fas fa-map-marked-alt fa-6x text-[#2D4573]"
       />
       <div
-        class="text-white text-2xl font-bold"
+        class="CountryStats"
       >
-        Loading...
+        <h2
+          class="text-4xl font-bold text-center"
+        />
+        <p
+          class="text-lg text-center"
+        >
+          2645825 Cases
+        </p>
       </div>
+    </section>
+    <section
+      class="countriesStats"
+    >
+      <h2
+        class="bg-[#35548B] py-[4px] px-4 text-white font-medium"
+      >
+        Stats by region
+      </h2>
+      <ul
+        class="grid grid-cols-2 justify-items-end text-right bg-[#4972be]"
+      >
+        <li
+          class="country w-full grid p-4 text-white"
+          data-testid="regionListItem"
+        >
+          <i
+            class="far fa-arrow-alt-circle-right fa-lg"
+          />
+          <i
+            class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+          />
+          <h2
+            class=" text-xl font-bold"
+          >
+            Tasmania
+          </h2>
+          <p>
+            31967 Cases
+          </p>
+        </li>
+        <li
+          class="country w-full grid p-4 text-white"
+          data-testid="regionListItem"
+        >
+          <i
+            class="far fa-arrow-alt-circle-right fa-lg"
+          />
+          <i
+            class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+          />
+          <h2
+            class=" text-xl font-bold"
+          >
+            Victoria
+          </h2>
+          <p>
+            889710 Cases
+          </p>
+        </li>
+        <li
+          class="country w-full grid p-4 text-white"
+          data-testid="regionListItem"
+        >
+          <i
+            class="far fa-arrow-alt-circle-right fa-lg"
+          />
+          <i
+            class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+          />
+          <h2
+            class=" text-xl font-bold"
+          >
+            Queensland
+          </h2>
+          <p>
+            896530 Cases
+          </p>
+        </li>
+      </ul>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Test Region component Test render Region component and mocking the store to test countries rendering 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="header px-4 bg-[#4369B2]"
+      >
+        <nav
+          class="nav h-[50px] text-white flex justify-between items-center font-medium "
+        >
+          <a
+            class="flex gap-2 items-center"
+            href="/"
+          >
+            <i
+              class="fas fa-chevron-left"
+            />
+            <h2>
+              Global
+            </h2>
+          </a>
+          <h2>
+             Stats
+          </h2>
+          <div
+            class="flex gap-4"
+          >
+            <i
+              class="fas fa-microphone"
+            />
+            <i
+              class="fas fa-cog"
+            />
+          </div>
+        </nav>
+      </header>
+      <section
+        class="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-8"
+      >
+        <i
+          class="fas fa-map-marked-alt fa-6x text-[#2D4573]"
+        />
+        <div
+          class="CountryStats"
+        >
+          <h2
+            class="text-4xl font-bold text-center"
+          />
+          <p
+            class="text-lg text-center"
+          >
+            2645825 Cases
+          </p>
+        </div>
+      </section>
+      <section
+        class="countriesStats"
+      >
+        <h2
+          class="bg-[#35548B] py-[4px] px-4 text-white font-medium"
+        >
+          Stats by region
+        </h2>
+        <ul
+          class="grid grid-cols-2 justify-items-end text-right bg-[#4972be]"
+        >
+          <li
+            class="country w-full grid p-4 text-white"
+            data-testid="regionListItem"
+          >
+            <i
+              class="far fa-arrow-alt-circle-right fa-lg"
+            />
+            <i
+              class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+            />
+            <h2
+              class=" text-xl font-bold"
+            >
+              Tasmania
+            </h2>
+            <p>
+              31967 Cases
+            </p>
+          </li>
+          <li
+            class="country w-full grid p-4 text-white"
+            data-testid="regionListItem"
+          >
+            <i
+              class="far fa-arrow-alt-circle-right fa-lg"
+            />
+            <i
+              class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+            />
+            <h2
+              class=" text-xl font-bold"
+            >
+              Victoria
+            </h2>
+            <p>
+              889710 Cases
+            </p>
+          </li>
+          <li
+            class="country w-full grid p-4 text-white"
+            data-testid="regionListItem"
+          >
+            <i
+              class="far fa-arrow-alt-circle-right fa-lg"
+            />
+            <i
+              class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+            />
+            <h2
+              class=" text-xl font-bold"
+            >
+              Queensland
+            </h2>
+            <p>
+              896530 Cases
+            </p>
+          </li>
+        </ul>
+      </section>
     </div>
+  </body>,
+  "container": <div>
+    <header
+      class="header px-4 bg-[#4369B2]"
+    >
+      <nav
+        class="nav h-[50px] text-white flex justify-between items-center font-medium "
+      >
+        <a
+          class="flex gap-2 items-center"
+          href="/"
+        >
+          <i
+            class="fas fa-chevron-left"
+          />
+          <h2>
+            Global
+          </h2>
+        </a>
+        <h2>
+           Stats
+        </h2>
+        <div
+          class="flex gap-4"
+        >
+          <i
+            class="fas fa-microphone"
+          />
+          <i
+            class="fas fa-cog"
+          />
+        </div>
+      </nav>
+    </header>
+    <section
+      class="hero px-8 bg-[#5787E5] text-white h-[15rem] flex justify-center items-center gap-8"
+    >
+      <i
+        class="fas fa-map-marked-alt fa-6x text-[#2D4573]"
+      />
+      <div
+        class="CountryStats"
+      >
+        <h2
+          class="text-4xl font-bold text-center"
+        />
+        <p
+          class="text-lg text-center"
+        >
+          2645825 Cases
+        </p>
+      </div>
+    </section>
+    <section
+      class="countriesStats"
+    >
+      <h2
+        class="bg-[#35548B] py-[4px] px-4 text-white font-medium"
+      >
+        Stats by region
+      </h2>
+      <ul
+        class="grid grid-cols-2 justify-items-end text-right bg-[#4972be]"
+      >
+        <li
+          class="country w-full grid p-4 text-white"
+          data-testid="regionListItem"
+        >
+          <i
+            class="far fa-arrow-alt-circle-right fa-lg"
+          />
+          <i
+            class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+          />
+          <h2
+            class=" text-xl font-bold"
+          >
+            Tasmania
+          </h2>
+          <p>
+            31967 Cases
+          </p>
+        </li>
+        <li
+          class="country w-full grid p-4 text-white"
+          data-testid="regionListItem"
+        >
+          <i
+            class="far fa-arrow-alt-circle-right fa-lg"
+          />
+          <i
+            class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+          />
+          <h2
+            class=" text-xl font-bold"
+          >
+            Victoria
+          </h2>
+          <p>
+            889710 Cases
+          </p>
+        </li>
+        <li
+          class="country w-full grid p-4 text-white"
+          data-testid="regionListItem"
+        >
+          <i
+            class="far fa-arrow-alt-circle-right fa-lg"
+          />
+          <i
+            class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+          />
+          <h2
+            class=" text-xl font-bold"
+          >
+            Queensland
+          </h2>
+          <p>
+            896530 Cases
+          </p>
+        </li>
+      </ul>
+    </section>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

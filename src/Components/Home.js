@@ -64,7 +64,7 @@ const Home = () => {
           )}
           <ul className="grid grid-cols-2 justify-items-end text-right">
             {searchedCountries.map((country) => (
-              <li key={country.id} className="country w-full">
+              <li key={country.id} className="country w-full" data-testid="countryListItem">
                 <Link to={country.name} className="w-full p-4 text-white grid">
                   <i className="far fa-arrow-alt-circle-right fa-lg" />
                   <i className="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center" />
