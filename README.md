@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # Covid Stats
 
->This web app shows COVID 19 Dayly stats and use Narrativa API to get this data and this site can show you:
+>This web app shows COVID 19 Daily stats and use Narrativa API to get this data and this site can show you:
 > - Home page with global total confirmed cases and list of all countries with thier total cases too and I implemet search bar to filter countries that match your search.
 > - Details or Rigion page when you click on any country on home page it directs you to this page whitch will show you all confermed cases for that country and regional cases data if found.
 
