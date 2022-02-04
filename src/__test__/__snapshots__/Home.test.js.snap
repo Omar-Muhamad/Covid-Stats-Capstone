@@ -1,0 +1,324 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Home component Test render Home component and mocking the store to test countries rendering 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="bg-[#5787E5]"
+      >
+        <header
+          class="header px-4 bg-[#4369B2]"
+        >
+          <nav
+            class="nav h-[50px] text-white flex justify-between items-center font-medium"
+          >
+            <h2>
+              2022
+            </h2>
+            <h2>
+              Global Covid 19 Stats
+            </h2>
+            <div
+              class="flex gap-4"
+            >
+              <i
+                class="fas fa-microphone"
+              />
+              <i
+                class="fas fa-cog"
+              />
+            </div>
+          </nav>
+        </header>
+        <section
+          class="hero px-8 text-white h-[15rem] flex justify-center items-center gap-8"
+        >
+          <i
+            class="fas fa-globe-americas fa-6x text-[#2D4573]"
+          />
+          <div
+            class="globalStats"
+          >
+            <h2
+              class="text-4xl font-bold text-center"
+            >
+              Global Cases
+            </h2>
+            <p
+              class="text-lg text-center"
+            >
+              387014569 Cases
+            </p>
+          </div>
+        </section>
+        <section
+          class="countriesStats"
+        >
+          <div
+            class="flex justify-between items-center bg-[#35548B] py-[10px] px-4 text-white font-medium"
+          >
+            <h2>
+              Stats by country
+            </h2>
+            <div
+              class="relative"
+            >
+              <input
+                class="rounded-2xl px-4 py-1 bg-[#5787E5] focus:outline-none placeholder:text-white text-lg w-[200px]"
+                id="searchBar"
+                name="searchBar"
+                placeholder="Search"
+                type="text"
+              />
+              <i
+                class="fas fa-search absolute right-[10px] top-[10px]"
+              />
+            </div>
+          </div>
+          <div
+            class="countriesContainer min-h-[500px]"
+          >
+            <ul
+              class="grid grid-cols-2 justify-items-end text-right"
+            >
+              <li
+                class="country w-full"
+                data-testid="countryListItem"
+              >
+                <a
+                  class="w-full p-4 text-white grid"
+                  href="/Afghanistan"
+                >
+                  <i
+                    class="far fa-arrow-alt-circle-right fa-lg"
+                  />
+                  <i
+                    class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+                  />
+                  <h2
+                    class=" text-xl font-bold"
+                  >
+                    Afghanistan
+                  </h2>
+                  <p>
+                    164727 Cases
+                  </p>
+                </a>
+              </li>
+              <li
+                class="country w-full"
+                data-testid="countryListItem"
+              >
+                <a
+                  class="w-full p-4 text-white grid"
+                  href="/Egypt"
+                >
+                  <i
+                    class="far fa-arrow-alt-circle-right fa-lg"
+                  />
+                  <i
+                    class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+                  />
+                  <h2
+                    class=" text-xl font-bold"
+                  >
+                    Egypt
+                  </h2>
+                  <p>
+                    124557 Cases
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="bg-[#5787E5]"
+    >
+      <header
+        class="header px-4 bg-[#4369B2]"
+      >
+        <nav
+          class="nav h-[50px] text-white flex justify-between items-center font-medium"
+        >
+          <h2>
+            2022
+          </h2>
+          <h2>
+            Global Covid 19 Stats
+          </h2>
+          <div
+            class="flex gap-4"
+          >
+            <i
+              class="fas fa-microphone"
+            />
+            <i
+              class="fas fa-cog"
+            />
+          </div>
+        </nav>
+      </header>
+      <section
+        class="hero px-8 text-white h-[15rem] flex justify-center items-center gap-8"
+      >
+        <i
+          class="fas fa-globe-americas fa-6x text-[#2D4573]"
+        />
+        <div
+          class="globalStats"
+        >
+          <h2
+            class="text-4xl font-bold text-center"
+          >
+            Global Cases
+          </h2>
+          <p
+            class="text-lg text-center"
+          >
+            387014569 Cases
+          </p>
+        </div>
+      </section>
+      <section
+        class="countriesStats"
+      >
+        <div
+          class="flex justify-between items-center bg-[#35548B] py-[10px] px-4 text-white font-medium"
+        >
+          <h2>
+            Stats by country
+          </h2>
+          <div
+            class="relative"
+          >
+            <input
+              class="rounded-2xl px-4 py-1 bg-[#5787E5] focus:outline-none placeholder:text-white text-lg w-[200px]"
+              id="searchBar"
+              name="searchBar"
+              placeholder="Search"
+              type="text"
+            />
+            <i
+              class="fas fa-search absolute right-[10px] top-[10px]"
+            />
+          </div>
+        </div>
+        <div
+          class="countriesContainer min-h-[500px]"
+        >
+          <ul
+            class="grid grid-cols-2 justify-items-end text-right"
+          >
+            <li
+              class="country w-full"
+              data-testid="countryListItem"
+            >
+              <a
+                class="w-full p-4 text-white grid"
+                href="/Afghanistan"
+              >
+                <i
+                  class="far fa-arrow-alt-circle-right fa-lg"
+                />
+                <i
+                  class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+                />
+                <h2
+                  class=" text-xl font-bold"
+                >
+                  Afghanistan
+                </h2>
+                <p>
+                  164727 Cases
+                </p>
+              </a>
+            </li>
+            <li
+              class="country w-full"
+              data-testid="countryListItem"
+            >
+              <a
+                class="w-full p-4 text-white grid"
+                href="/Egypt"
+              >
+                <i
+                  class="far fa-arrow-alt-circle-right fa-lg"
+                />
+                <i
+                  class="fas fa-map-marker-alt fa-5x text-[#2D4573] justify-self-center"
+                />
+                <h2
+                  class=" text-xl font-bold"
+                >
+                  Egypt
+                </h2>
+                <p>
+                  124557 Cases
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
