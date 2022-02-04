@@ -17,8 +17,7 @@ Live Video Demo [Link](https://www.loom.com/share/81fbd432771946f59feb5a152a00a7
 
 ## Site Screenshots
 
-![screenshot](./Screenshot-2.png)
-![screenshot](./Screenshot-1.png)
+![screenshot](./Screenshot-2.png) ![screenshot](./Screenshot-1.png)
 
 
 ## Built With
